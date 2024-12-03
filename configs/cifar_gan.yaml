@@ -1,0 +1,32 @@
+---
+wandb: true
+experiment_name: CIFAR10 RESNET 256gen OCT # To be changed each time
+model: ResNet32
+dataset: CIFAR10
+input_channels: 3
+size: 32
+root_dir: "" #Not required for some datasets
+cuda_devices: "0,1"
+
+num_classes: 10
+iterations: 30000
+n_critic: 5
+display_step: 50
+conditional: True
+
+noise_dim: 128
+batch_size: 256
+d_learning_rate: 1.0e-05
+g_learning_rate: 1.0e-05
+
+optim: adamw
+sigma: -1 # Sigma Override, Epsilon determines privacy
+weight_clip: 0.01
+epsilon: 1
+privacy_violation: 1.0e-05
+weight_decay: 1.0e-04
+
+#Not implemented
+augment: true # not used currently
+scheduler: cos
+scheduler_warmup: 1

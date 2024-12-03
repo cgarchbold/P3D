@@ -1,0 +1,31 @@
+---
+wandb: true
+experiment_name: MNIST (e=inf) # To be changed each time
+model: conv
+dataset: MNIST
+input_channels: 1
+root_dir: "" #Not required for some datasets
+cuda_devices: "0,1"
+
+iterations: 10000
+n_critic: 5
+display_step: 50
+conditional: false
+noise_dim: 10
+
+batch_size: 256
+d_learning_rate: 1.0e-05
+g_learning_rate: 1.0e-05
+
+optim: adamw
+sigma: 0 # Sigma Override, Epsilon determines sigma
+weight_clip: 0.01
+epsilon: inf
+privacy_violation: 1.0e-05
+weight_decay: 1.0e-04
+
+#Not implemented
+gradient_penalty: false
+augment: true # not used currently
+scheduler: cos
+scheduler_warmup: 1

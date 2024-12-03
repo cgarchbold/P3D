@@ -1,0 +1,34 @@
+---
+wandb: true
+experiment_name: UCLA wgangp (full conditional) conv OCT
+model: conv32
+dataset: UCLA
+input_channels: 3
+root_dir: "/scratch/UCLA-protest32/" #Not required for some datasets #TODO: Move to hummingbird
+size: 32
+cuda_devices: "0,1"
+objective: "wgangp"
+
+iterations: 30000
+n_critic: 5
+display_step: 50
+
+conditional: True
+multi_label: True
+num_labels: 12
+num_classes: 2
+
+noise_dim: 256
+batch_size: 64
+d_learning_rate: 1.0e-05
+g_learning_rate: 1.0e-05
+optim: adamw
+sigma: 0
+weight_clip: 0.01
+epsilon: inf
+weight_decay: 1.0e-04
+
+#Not implemented
+scheduler: cos
+scheduler_warmup: 1
+augment: true
